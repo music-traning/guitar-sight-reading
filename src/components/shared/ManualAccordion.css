@@ -1,0 +1,49 @@
+.manual-accordion {
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(124, 58, 237, 0.05);
+}
+
+.manual-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.manual-toggle-icon { font-size: 1rem; }
+
+.manual-toggle-title {
+  flex: 1;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #a78bfa;
+}
+
+.manual-chevron {
+  font-size: 0.65rem;
+  color: #6d28d9;
+}
+
+.manual-body {
+  padding: 0 1rem 1rem;
+  animation: slide-down 0.2s ease;
+}
+
+.manual-body p {
+  color: #94a3b8;
+  font-size: 0.83rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

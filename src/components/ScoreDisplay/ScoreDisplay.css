@@ -1,0 +1,65 @@
+.score-display-wrapper {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  min-height: 180px;
+}
+
+.score-display-container {
+  width: 100%;
+  padding: 8px;
+}
+
+/* ABC.js SVG styles */
+.score-display-container svg {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.score-display-container svg path {
+  fill: #000;
+  stroke: #000;
+  stroke-width: 0.6px;
+}
+
+.score-display-container svg text {
+  fill: #000 !important;
+  font-weight: bold;
+}
+
+/* Note colors */
+.score-display-container .abcjs-note {
+  transition: opacity 0.15s;
+}
+
+.score-display-container .note-current * {
+  fill: #ffd700 !important;
+  filter: drop-shadow(0 0 6px #ffd70088);
+}
+
+.score-display-container .note-next * {
+  fill: #4fc3f7 !important;
+  opacity: 0.85;
+}
+
+.score-display-container .note-passed * {
+  fill: #4caf50 !important;
+  opacity: 0.5;
+}
+
+/* Chord name styling */
+.score-display-container .abcjs-chord {
+  font-weight: 600;
+  fill: #a78bfa !important;
+  font-size: 13px;
+}
+
+/* Hint labels */
+.note-hint-label {
+  font-size: 9px;
+  fill: rgba(255, 200, 100, 0.6);
+  font-family: 'Outfit', sans-serif;
+  pointer-events: none;
+}

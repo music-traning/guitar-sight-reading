@@ -1,0 +1,198 @@
+.master-screen {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.master-header { text-align: center; }
+.master-header h1 { font-size: 1.4rem; font-weight: 800; color: #e2e8f0; margin: 0 0 0.3rem; }
+.master-header p  { font-size: 0.85rem; color: #64748b; margin: 0; }
+
+/* ── Difficulty tabs ─────────────────────── */
+.difficulty-tabs {
+  display: flex;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.diff-tab {
+  flex: 1;
+  padding: 0.55rem;
+  border: none;
+  border-radius: 9px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  color: #475569;
+  transition: all 0.2s;
+  font-family: 'Outfit', sans-serif;
+}
+
+.diff-tab.active {
+  background: color-mix(in srgb, var(--diff-color) 18%, transparent);
+  color: var(--diff-color);
+  border: 1px solid color-mix(in srgb, var(--diff-color) 35%, transparent);
+}
+
+/* ── Song list ───────────────────────────── */
+.song-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.song-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.1rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  text-align: left;
+}
+
+.song-card:hover {
+  border-color: rgba(124, 58, 237, 0.3);
+  background: rgba(124, 58, 237, 0.05);
+  transform: translateX(2px);
+}
+
+.song-card-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 0.2rem;
+}
+
+.song-card-meta {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  color: #475569;
+}
+
+.song-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+.song-stars { display: flex; gap: 2px; }
+
+.stage-star { font-size: 0.9rem; color: #334155; }
+.stage-star.filled { color: #fbbf24; }
+
+.song-cleared { font-size: 0.7rem; color: #64748b; }
+
+/* ── Stage select ────────────────────────── */
+.stage-select { display: flex; flex-direction: column; gap: 1rem; }
+
+.stage-select-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.back-link {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #64748b;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  font-family: 'Outfit', sans-serif;
+}
+
+.back-link:hover { color: #e2e8f0; }
+
+.stage-song-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.stage-list { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.stage-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.1rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  text-align: left;
+}
+
+.stage-card.selected {
+  border-color: rgba(124, 58, 237, 0.5);
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.stage-card.cleared { border-color: rgba(74, 222, 128, 0.2); }
+
+.stage-card-left {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.stage-num {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.stage-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 0.15rem;
+}
+
+.stage-meta {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  color: #475569;
+}
+
+.stage-card-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title-badge { font-size: 1.1rem; }
+.clear-check { color: #4ade80; font-weight: 700; font-size: 1rem; }
+.stage-arrow { color: #7c3aed; font-size: 1.3rem; }
+
+.start-practice-btn {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.9rem;
+}
+
+.master-manual { margin-top: 0.5rem; }

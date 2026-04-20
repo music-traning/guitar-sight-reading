@@ -1,0 +1,96 @@
+.combo-display {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.2s;
+  position: relative;
+  overflow: visible;
+}
+
+.combo-count {
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 1;
+  transition: all 0.15s;
+}
+
+.combo-bump {
+  animation: combo-bump 0.3s ease-out;
+}
+
+@keyframes combo-bump {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+.combo-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+}
+
+.combo-word {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #64748b;
+}
+
+.combo-mult {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.combo-tier-label {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.combo-tier-flash {
+  animation: tier-rise 0.8s ease-out forwards;
+}
+
+@keyframes tier-rise {
+  0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+}
+
+/* ── Tier colors ─────────────────────────── */
+.tier-none .combo-count { color: #94a3b8; }
+.tier-good .combo-count { color: #4ade80; }
+.tier-good .combo-mult  { color: #4ade80; }
+.tier-cool .combo-count { color: #60a5fa; }
+.tier-cool .combo-mult  { color: #60a5fa; }
+.tier-hot .combo-count  { color: #fbbf24; }
+.tier-hot .combo-mult   { color: #fbbf24; }
+.tier-hot .combo-tier-label { color: #fbbf24; }
+
+.tier-blazing .combo-count { color: #f97316; }
+.tier-blazing .combo-mult  { color: #f97316; }
+.tier-blazing .combo-tier-label { color: #f97316; }
+.tier-blazing.flash { box-shadow: 0 0 20px rgba(249, 115, 22, 0.4); }
+
+.tier-legendary .combo-count { color: #e879f9; }
+.tier-legendary .combo-mult  { color: #e879f9; }
+.tier-legendary .combo-tier-label { color: #e879f9; }
+.tier-legendary.flash {
+  box-shadow: 0 0 30px rgba(232, 121, 249, 0.5), 0 0 60px rgba(232, 121, 249, 0.2);
+  animation: legendary-glow 0.6s ease;
+}
+
+@keyframes legendary-glow {
+  0%, 100% { box-shadow: 0 0 30px rgba(232, 121, 249, 0.5); }
+  50% { box-shadow: 0 0 60px rgba(232, 121, 249, 0.8); }
+}

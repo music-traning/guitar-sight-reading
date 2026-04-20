@@ -1,0 +1,177 @@
+.titles-screen {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.titles-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.titles-header h1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+.titles-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.titles-progress-bar {
+  flex: 1;
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.titles-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #fbbf24);
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+.titles-count {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #a78bfa;
+  white-space: nowrap;
+}
+
+/* ── Grand Master ────────────────────────── */
+.grand-master-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s;
+}
+
+.grand-master-card.unlocked {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(124, 58, 237, 0.1));
+  border-color: rgba(251, 191, 36, 0.4);
+  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.15);
+}
+
+.gm-icon { font-size: 2.5rem; }
+
+.gm-info { flex: 1; }
+
+.gm-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 0.2rem;
+}
+
+.gm-desc {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.gm-status {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.gm-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  transition: background 0.3s;
+}
+
+.gm-dot.done { background: #4ade80; }
+
+/* ── Difficulty sections ─────────────────── */
+.diff-section { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.diff-section-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+/* ── Title grid ──────────────────────────── */
+.titles-grid { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+
+.title-song-name {
+  flex: 1;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title-stages {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.title-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  width: 46px;
+  padding: 0.3rem 0.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  transition: all 0.2s;
+}
+
+.title-cell.earned {
+  background: rgba(251, 191, 36, 0.1);
+  border-color: rgba(251, 191, 36, 0.35);
+}
+
+.title-cell.cleared {
+  background: rgba(74, 222, 128, 0.07);
+  border-color: rgba(74, 222, 128, 0.2);
+}
+
+.title-cell-icon { font-size: 1rem; }
+.title-cell-lock { font-size: 0.9rem; color: #1e293b; font-weight: 700; }
+
+.title-cell-label {
+  font-size: 0.58rem;
+  color: #475569;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.title-cell.earned .title-cell-label { color: #fbbf24; }
+
+@media (max-width: 480px) {
+  .title-cell { width: 38px; }
+  .title-cell-label { font-size: 0.52rem; }
+}

@@ -1,0 +1,60 @@
+.count-in-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(9, 11, 20, 0.85);
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.count-in-number {
+  font-size: 8rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  animation: count-pulse 0.4s ease-out forwards;
+  text-shadow:
+    0 0 40px rgba(124, 58, 237, 0.8),
+    0 0 80px rgba(14, 165, 233, 0.4);
+}
+
+@keyframes count-pulse {
+  0% { transform: scale(1.6); opacity: 0; }
+  30% { transform: scale(1.1); opacity: 1; }
+  70% { transform: scale(1.0); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.count-in-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #64748b;
+}
+
+.count-in-dots {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.count-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  transition: all 0.15s;
+}
+
+.count-dot.filled {
+  background: #7c3aed;
+}
+
+.count-dot.active {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.7);
+  transform: scale(1.3);
+}

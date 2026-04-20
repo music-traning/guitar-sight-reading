@@ -1,0 +1,48 @@
+.metro-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.metro-beat-group {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.metro-beat, .metro-sub {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  padding: 0.2rem 0.3rem;
+  border-radius: 4px;
+  transition: all 0.05s;
+  min-width: 18px;
+  text-align: center;
+}
+
+.metro-beat.beat-active {
+  color: #fff;
+  background: rgba(124, 58, 237, 0.5);
+  transform: scale(1.15);
+}
+
+.metro-beat.beat-accent.beat-active {
+  background: rgba(245, 158, 11, 0.6);
+  color: #fff;
+}
+
+.metro-sub.sub-active {
+  color: #94a3b8;
+  transform: scale(1.1);
+}
+
+.metro-sub {
+  font-size: 0.7rem;
+  color: #1e293b;
+}
