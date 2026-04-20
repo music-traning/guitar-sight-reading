@@ -2,10 +2,10 @@ import { useApp } from '../../context/AppContext';
 import './AppShell.css';
 
 const NAV_ITEMS = [
-  { id: 'home',     iconJa: '🏠', iconEn: '🏠', keyJa: 'nav.home',     keyEn: 'nav.home' },
-  { id: 'master',   iconJa: '🏯', iconEn: '🏯', keyJa: 'nav.masterMode', keyEn: 'nav.masterMode' },
-  { id: 'scale',    iconJa: '🎼', iconEn: '🎼', keyJa: 'nav.scaleMode', keyEn: 'nav.scaleMode' },
-  { id: 'titles',   iconJa: '🎖️', iconEn: '🎖️', keyJa: 'nav.titles',   keyEn: 'nav.titles' },
+  { id: 'home', iconJa: '🏠', iconEn: '🏠', keyJa: 'nav.home', keyEn: 'nav.home' },
+  { id: 'master', iconJa: '🏯', iconEn: '🏯', keyJa: 'nav.masterMode', keyEn: 'nav.masterMode' },
+  { id: 'scale', iconJa: '🎼', iconEn: '🎼', keyJa: 'nav.scaleMode', keyEn: 'nav.scaleMode' },
+  { id: 'titles', iconJa: '🎖️', iconEn: '🎖️', keyJa: 'nav.titles', keyEn: 'nav.titles' },
   { id: 'settings', iconJa: '⚙️', iconEn: '⚙️', keyJa: 'nav.settings', keyEn: 'nav.settings' },
 ];
 
@@ -43,6 +43,16 @@ export default function AppShell({ children }) {
       {/* Main content */}
       <main className="app-main">
         {children}
+
+        <footer className="app-footer">
+          <a
+            href="https://note.com/jazzy_begin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ©2026 buro
+          </a>
+        </footer>
       </main>
 
       {/* Bottom navigation */}
