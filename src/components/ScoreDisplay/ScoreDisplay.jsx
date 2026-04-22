@@ -154,12 +154,13 @@ const ScoreDisplay = forwardRef(function ScoreDisplay(
     containerRef.current.innerHTML = '';
 
     try {
-      // staffwidthを固定し、レスポンシブ崩れを防止。ABC側での\n改行命令に従わせる
+      // staffwidthを固定したうえでレスポンシブオプションを有効化し、画面幅に合わせて縮小・拡大されるようにする
       const renderOptions = {
         add_classes: true,
         clickListener: null,
-        staffwidth: 850,
-        scale: 1.3,
+        responsive: 'resize',
+        staffwidth: 800,
+        scale: 1.2,
         paddingtop: 16,
         paddingbottom: 16,
         paddingleft: 15,
