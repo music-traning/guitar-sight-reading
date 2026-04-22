@@ -62,6 +62,13 @@ const ScoreDisplay = forwardRef(function ScoreDisplay(
               }
             }
           });
+
+          // カラオケ再生中も現在音符を視領内に保つために自動スクロール
+          // (イベントで複数音が来た場合最初の音を採用)
+          const firstEl = flatElements.find(el => el?.classList?.contains('abcjs-note'));
+          if (firstEl) {
+            scrollNoteIntoView(firstEl);
+          }
           
           // Add 'passed' class to previous notes
           if (noteIndex > 0) {
@@ -105,7 +112,11 @@ const ScoreDisplay = forwardRef(function ScoreDisplay(
       const currentEl = notesRef.current[idx]?.element;
       const nextEl = notesRef.current[idx + 1]?.element;
       
-      if (currentEl) currentEl.classList.add('note-current');
+      if (currentEl) {
+        currentEl.classList.add('note-current');
+        // 現在の音符が視領外ならスクロールして見えるようにする
+        scrollNoteIntoView(currentEl);
+      }
       if (nextEl) nextEl.classList.add('note-next');
       
       // Mark passed notes
@@ -115,6 +126,27 @@ const ScoreDisplay = forwardRef(function ScoreDisplay(
     }
   }, []);
 
+  // スクロールコンテナを見つけてノートを早めに表示領域内に入れる
+  const scrollNoteIntoView = (el) => {
+    if (!el || !containerRef.current) return;
+    const scrollParent = containerRef.current.closest(
+      '.practice-score-area, .preview-score-area'
+    );
+    if (!scrollParent) return;
+    
+    const noteRect = el.getBoundingClientRect();
+    const parentRect = scrollParent.getBoundingClientRect();
+    
+    // スクロールを早めにトリガー（画面下部40%に来たら、上部20%の位置まで一気にスクロール）
+    if (noteRect.bottom > parentRect.bottom - (parentRect.height * 0.4)) {
+      const targetScrollTop = scrollParent.scrollTop + (noteRect.top - parentRect.top) - (parentRect.height * 0.2);
+      scrollParent.scrollTo({ top: targetScrollTop, behavior: 'smooth' });
+    } else if (noteRect.top < parentRect.top + (parentRect.height * 0.1)) {
+      const targetScrollTop = scrollParent.scrollTop + (noteRect.top - parentRect.top) - (parentRect.height * 0.2);
+      scrollParent.scrollTo({ top: targetScrollTop, behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     if (!containerRef.current || !abcString) return;
 
@@ -122,19 +154,20 @@ const ScoreDisplay = forwardRef(function ScoreDisplay(
     containerRef.current.innerHTML = '';
 
     try {
+      // staffwidthを固定し、レスポンシブ崩れを防止。ABC側での\n改行命令に従わせる
       const renderOptions = {
-        responsive: 'resize',
         add_classes: true,
         clickListener: null,
-        staffwidth: containerRef.current.clientWidth - 40,
-        scale: 1.2,
-        paddingtop: 20,
-        paddingbottom: 20,
-        paddingleft: 20,
-        paddingright: 20,
+        staffwidth: 850,
+        scale: 1.3,
+        paddingtop: 16,
+        paddingbottom: 16,
+        paddingleft: 15,
+        paddingright: 15,
+        wrap: { minSpacing: 1.0, maxSpacing: 2.8, preferredMeasuresPerLine: 4 },
         format: {
-          gchordfont: 'Helvetica 12',
-          annotationfont: 'Helvetica 10',
+          gchordfont: 'Helvetica 14',
+          annotationfont: 'Helvetica 12',
         },
       };
 
