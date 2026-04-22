@@ -60,6 +60,7 @@ export default function MasterModeScreen() {
       <div className="master-header">
         <h1>🏯 {t('master.title')}</h1>
         <p>{t('master.description')}</p>
+        <p className="master-disclaimer">{t('master.disclaimer')}</p>
       </div>
 
       {/* Difficulty tabs */}

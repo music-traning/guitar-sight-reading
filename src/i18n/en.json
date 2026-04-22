@@ -68,6 +68,7 @@
   "master": {
     "title": "Master Mode",
     "description": "Sight-read Jazz standards and earn titles",
+    "disclaimer": "* The included songs are custom-arranged variations inspired by the originals for sight-reading practice, not exact transcriptions.",
     "beginner": "Beginner",
     "intermediate": "Intermediate",
     "advanced": "Advanced",
